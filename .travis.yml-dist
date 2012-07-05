@@ -1,5 +1,9 @@
 language: php
 
+php:
+    - 5.3
+    - 5.4
+
 before_install:
     - export HOST="myapp.local"
     - export DATABASE="mydatabase"
@@ -11,9 +15,12 @@ before_install:
     - sh -e .travis/scripts/sahi-install.sh
 
 before_script:
+    - sh -e .travis/scripts/sf2-configure.sh "$DATABASE"
     - sh -e .travis/scripts/behat-configure.sh "$HOST" "$BROWSER"
     - sh -e .travis/scripts/sahi-configure.sh
-    - sh -e .travis/scripts/gem-install.sh "travis-lint"
+    - sh -e .travis/scripts/sf2-init.sh
+    - sh -e .travis/scripts/sahi-start.sh
 
 script:
-    - travis-lint .travis.yml-dist
+    - phpunit
+    - php behat.phar
