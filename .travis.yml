@@ -19,4 +19,5 @@ before_script:
     - sh -e .travis/scripts/sahi-start.sh
 
 script:
+    - phpunit
     - php behat.phar
