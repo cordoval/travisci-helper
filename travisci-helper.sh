@@ -2,8 +2,8 @@
 
 sudo sh -e .travis/scripts/apt-get.sh
 sudo sh -e .travis/scripts/apache2-vhost.sh "[myapp].local"
-sudo sh -e .travis/scripts/apache2-configure.sh
-sh -e .travis/scripts/mysql.sh
+sudo sh -e .travis/scripts/apache2-configure.sh "[myapp].local"
+sh -e .travis/scripts/mysql.sh "[mydatabase]"
 sh -e .travis/scripts/sahi-install.sh
 
 sh -e .travis/scripts/sf2-configure.sh "[mydatabase]"
