@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo $FOO
+
 EXTRA_PACKETS="apache2 libapache2-mod-php5 php5-mysql"
 if [ "$1" ]
 then
@@ -9,4 +11,4 @@ fi
 echo "---> Starting $(tput bold ; tput setaf 2)packets installation$(tput sgr0)"
 echo "---> Packets to install : $(tput bold ; tput setaf 3)$EXTRA_PACKETS$(tput sgr0)"
 
-apt-get install -y --force-yes $EXTRA_PACKETS
+sudo apt-get install -y --force-yes $EXTRA_PACKETS
