@@ -22,7 +22,7 @@ echo "---> Root directory : $(tput bold ; tput setaf 3)$ROOTDIR$(tput sgr0)"
 echo "---> Virtualhost name : $(tput bold ; tput setaf 3)$VHOSTNAME$(tput sgr0)"
 echo "---> Document root : $(tput bold ; tput setaf 3)$DOCROOT$(tput sgr0)"
 
-sed s?%basedir%?$ROOTDIR? "$BASEDIR/apache2/virtualhost.local-dist" | sed s/%hostname%/$VHOSTNAME/ > $VHOSTNAME
+sed s?%basedir%?$DOCROOT? "$BASEDIR/apache2/virtualhost.local-dist" | sed s/%hostname%/$VHOSTNAME/ > $VHOSTNAME
 sudo mv $VHOSTNAME /etc/apache2/sites-available/$VHOSTNAME
 
 echo "---> $(tput bold ; tput setaf 2)Adding host to /etc/hosts$(tput sgr0) :"
