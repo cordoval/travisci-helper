@@ -1,15 +1,15 @@
 language: php
 
 before_install:
-    - export HOST="myapp.local"
     - export DATABASE="mydatabase"
-    - export BROWSER="phantomjs"
+    - sh -e .travis/scripts/apt-get.sh
+    - sh -e .travis/scripts/gem-install.sh "travis-lint"
     - sh -e .travis/scripts/mysql.sh "$DATABASE"
     - sh -e .travis/scripts/sahi-install.sh
 
 before_script:
     - sh -e .travis/scripts/sahi-configure.sh
-    - sh -e .travis/scripts/gem-install.sh "travis-lint"
+
 
 script:
     - bin/roundup tests/*
