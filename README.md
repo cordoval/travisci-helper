@@ -13,7 +13,7 @@ In oth files, you will have to replace some variables (variables are inside brac
 * DATABASE : the database name you want to use to test your web app.
 * BROWSER : the browser you want to use to test your web app. On TravisCI, this should always be ```phantomjs`` unless you choose to install another one.
 
-When your are done with this (editing bot ```.travis.yml``` and ```travisci-helper.sh```) you should launch the ```travisci-helper.sh``` to test your configuration : this script is made to test your configuration locally, so be carefull, it will install some packages and also create an Apache virtual host.
+When your are done with this (editing both ```.travis.yml``` and ```travisci-helper.sh```) you should launch the ```travisci-helper.sh``` to test your configuration : this script is made to test your configuration locally, so be carefull, it will install some packages and also create an Apache virtual host.
 
 If you don't want to run some steps (for example, you don't want to run Behat tests, simply remove or comment the steps used to configure and launch them).
 
