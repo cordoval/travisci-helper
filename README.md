@@ -8,7 +8,7 @@
 To start using travis-ci helper, just put the content of the repository in the root of your project. You will then have to do some little tweaks
 in the ```.travis.yml``` and ```travisci-helper.sh``` files.
 
-In oth files, you will have to replace some variables (variables are inside brackets) :
+In the files, you will have to replace some variables (variables are inside brackets) :
 * HOST : the domain name you want to use to test your web app.
 * DATABASE : the database name you want to use to test your web app.
 * BROWSER : the browser you want to use to test your web app. On TravisCI, this should always be ```phantomjs`` unless you choose to install another one.
